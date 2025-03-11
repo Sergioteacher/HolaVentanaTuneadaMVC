@@ -15,6 +15,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setBounds(0, 0, 300, 180);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,18 +28,37 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanelCentral = new javax.swing.JPanel();
+        miPanelTuneadoHolaV1 = new holaventanatuneadamvc.vistaHolaV.MiPanelTuneadoHolaV();
+        jPanelParaRecolocar = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hola Ventana Tuneada");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Hola mundo");
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("?");
+        getContentPane().add(jLabel2, java.awt.BorderLayout.PAGE_END);
+
+        jPanelCentral.setLayout(new javax.swing.BoxLayout(jPanelCentral, javax.swing.BoxLayout.Y_AXIS));
+        jPanelCentral.add(miPanelTuneadoHolaV1);
+
+        jPanelParaRecolocar.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jButton1.setText("Ok!");
+        jPanelParaRecolocar.add(jButton1);
+
+        jPanelCentral.add(jPanelParaRecolocar);
+
+        getContentPane().add(jPanelCentral, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -45,5 +66,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanelCentral;
+    private javax.swing.JPanel jPanelParaRecolocar;
+    private holaventanatuneadamvc.vistaHolaV.MiPanelTuneadoHolaV miPanelTuneadoHolaV1;
     // End of variables declaration//GEN-END:variables
 }
