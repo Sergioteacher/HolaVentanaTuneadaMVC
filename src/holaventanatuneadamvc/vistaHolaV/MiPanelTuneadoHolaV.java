@@ -4,6 +4,8 @@
  */
 package holaventanatuneadamvc.vistaHolaV;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Sergio Teacher
@@ -46,4 +48,27 @@ public class MiPanelTuneadoHolaV extends javax.swing.JPanel {
     private javax.swing.JTextField TextFieldCampo;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+    * Doy el control de escuchar al botÃ³n Validar
+    */
+    public void addActionListenerBtnValidar(ActionListener l){
+        BtnValidar.addActionListener(l);
+    }
+
+    /**
+    * Gettter and Setter de la propiedad Text del JTextField
+    * a mano
+    */
+    public String getTextFieldCampoTuneado() {
+        return TextFieldCampo.getText();
+    }
+    /**
+    * Gettter and Setter de la propiedad Text del JTextField
+    * a mano
+    */
+    public void setTextFieldCampoTuneado(String Micadena) {
+        TextFieldCampo.setText(Micadena);
+    }
+
 }

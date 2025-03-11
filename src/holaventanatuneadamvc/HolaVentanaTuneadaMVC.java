@@ -24,6 +24,8 @@ public class HolaVentanaTuneadaMVC {
         ModeloHolaV mHolaV = new ModeloHolaV();
         VentanaPrincipal VV = new VentanaPrincipal();
         ControlHolaV cHolaV = new ControlHolaV(VV, mHolaV);
+
+        cHolaV.ronronea();
     }
     
 }

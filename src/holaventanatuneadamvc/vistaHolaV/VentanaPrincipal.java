@@ -4,6 +4,8 @@
  */
 package holaventanatuneadamvc.vistaHolaV;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Sergio Teacher
@@ -28,33 +30,33 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jlabelNorte = new javax.swing.JLabel();
+        jLabelSur = new javax.swing.JLabel();
         jPanelCentral = new javax.swing.JPanel();
         miPanelTuneadoHolaV1 = new holaventanatuneadamvc.vistaHolaV.MiPanelTuneadoHolaV();
         jPanelParaRecolocar = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        BtnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hola Ventana Tuneada");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Hola mundo");
-        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
+        jlabelNorte.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jlabelNorte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlabelNorte.setText("Hola mundo");
+        getContentPane().add(jlabelNorte, java.awt.BorderLayout.PAGE_START);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("?");
-        getContentPane().add(jLabel2, java.awt.BorderLayout.PAGE_END);
+        jLabelSur.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelSur.setText("?");
+        getContentPane().add(jLabelSur, java.awt.BorderLayout.PAGE_END);
 
         jPanelCentral.setLayout(new javax.swing.BoxLayout(jPanelCentral, javax.swing.BoxLayout.Y_AXIS));
         jPanelCentral.add(miPanelTuneadoHolaV1);
 
         jPanelParaRecolocar.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jButton1.setText("Ok!");
-        jPanelParaRecolocar.add(jButton1);
+        BtnOk.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        BtnOk.setText("Ok!");
+        jPanelParaRecolocar.add(BtnOk);
 
         jPanelCentral.add(jPanelParaRecolocar);
 
@@ -66,11 +68,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton BtnOk;
+    private javax.swing.JLabel jLabelSur;
     private javax.swing.JPanel jPanelCentral;
     private javax.swing.JPanel jPanelParaRecolocar;
+    private javax.swing.JLabel jlabelNorte;
     private holaventanatuneadamvc.vistaHolaV.MiPanelTuneadoHolaV miPanelTuneadoHolaV1;
     // End of variables declaration//GEN-END:variables
+
+    /**
+    * Un truco para actuar sobre el Jlabel
+    */
+    public void escribeTxtEstado(String s) {                                      
+        //jLabelSur.setText("  Hola holita");
+        jLabelSur.setText(s);
+    }  
+
+    /**
+    * Doy el control de escuchar al botón Ok!
+    */
+    public void addActionListenerBtnOk(ActionListener l){
+        BtnOk.addActionListener(l);
+    }
+    /**
+    * Doy el control de escuchar al botón Validar
+    * pero como este está dentro de un panel tuneado
+    * en realidad doy el control de escuchar al "panel"
+    * y este en su código tiene un método para el botón Validar
+    *
+    * Hay que tener en cuenta que es un objeto dentro de un objeto
+    * uno coge la señal y se la pasa al otro
+    */
+    public void addActionListenerMiPanelTuneadoHolaV(ActionListener l){
+        miPanelTuneadoHolaV1.addActionListenerBtnValidar(l);
+    }
+
+    /**
+    * Obtengo el String y lo paso
+    */
+    public String getTextFieldCampo(){
+        return miPanelTuneadoHolaV1.getTextFieldCampoTuneado();
+    }
+    /**
+    * Igual, ahora meto el String a la caja de texto del panel tuneado
+    */
+    public void setTextFieldCampo(String Micadena) {
+        miPanelTuneadoHolaV1.setTextFieldCampoTuneado(Micadena);
+    }
+
 }
